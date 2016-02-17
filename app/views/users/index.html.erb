@@ -20,7 +20,7 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.tel %></td>
-        <td><%= user.group %></td>
+        <td><%= user.group.name unless user.group.nil? %></td>
         <td><%= user.sensei %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
@@ -32,3 +32,4 @@
 <br>
 <%= render partial: 'group' %>
 <%= link_to 'New Group', new_group_path %>
+<%= link_to 'Random', randomize_path %>

@@ -13,6 +13,19 @@ class UsersController < ApplicationController
   def show
   end
 
+  # Get
+  def random
+    array_id = User.all.map { |x| x.id }
+    while array_id.size > 0
+      Group.all.each do |group|
+        a = array_id.sample
+        User.find(a).update_attributes(group_id: group.id)unless a.nil?
+        array_id.delete(a)
+      end
+    end
+    redirect_to :root, notice: "Job Done"
+  end
+
   # GET /users/new
   def new
     @user = User.new
