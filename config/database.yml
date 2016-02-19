@@ -24,3 +24,6 @@ production:
  database: my_database_production
  pool: 5
  timeout: 5000
+ username: pguser
+ password: pguser
+ host: vps233813.ovh.net
